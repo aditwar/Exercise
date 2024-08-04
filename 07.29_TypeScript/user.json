@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": "11c8",
+      "name": "Anton",
+      "email": "anton@gmail",
+      "age": 25
+    },
+    {
+      "id": "d6d2",
+      "name": "Bayu",
+      "email": "bayu@gmail",
+      "age": 30
+    },
+    {
+      "id": "8320",
+      "name": "asdfasdf",
+      "email": "adsf@gmail",
+      "age": 4
+    },
+    {
+      "id": "7d9a",
+      "name": "adit",
+      "email": "adit@gmail.com",
+      "age": 8
+    }
+  ]
+}
