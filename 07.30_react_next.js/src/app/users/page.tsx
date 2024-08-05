@@ -1,13 +1,27 @@
 // ini karena didalam folder users maka dapat diakses (ROUTER) dalam folder dengan alamat "/users"
 import Link from "next/link";
+import { IUser } from "../type";
 
 // FUNCTION untuk FETCHING DATA dri SERVER
+async function getData() {
 
+    // Ini alamat dari JSON SERVER
+    const res = await fetch('http://localhost:2000/user')
 
-export default function UsersPage() {
+    // ini untuk menangkap ERROR
+    if (!res.ok) {
+        throw new Error ('Failed to fetch data')
+    }
 
-    // data ini tidak perlu pakai type nya (data: string[]) krn secara default sudah ada
-    const data = ["Andi", "Budi", "Caca", "Dudi"]
+    return res.json(
+
+    )
+}
+
+export default async function UsersPage() {
+
+    // data ini menggunakan tipe data dari IUser ARRAY
+    const data: IUser[] = await getData()
     return (
         <div className="flex w-full flex-col items-center">
             {
@@ -17,7 +31,7 @@ export default function UsersPage() {
 
                         // agar tidak ERROR diberi key={} dibuat secara unique
                         // ${item} agar menunjuk pada item di ARRAY sesuai namanya
-                        <Link href={`/users/${item}`} key={item}>{item}</Link>
+                        <Link href={`/users/${item}`} key={item.id}>{item.name}</Link>
                     )
                 })
             }
