@@ -2,20 +2,18 @@
 import Link from "next/link";
 import { IUser } from "../type";
 
-// FUNCTION untuk FETCHING DATA dri SERVER
+// FUNCTION untuk FETCHING (GET) DATA dri SERVER menggunakan async
 async function getData() {
 
     // Ini alamat dari JSON SERVER
-    const res = await fetch('http://localhost:2000/user')
+    const res = await fetch("http://localhost:2000/user")
 
     // ini untuk menangkap ERROR
     if (!res.ok) {
         throw new Error ('Failed to fetch data')
     }
 
-    return res.json(
-
-    )
+    return res.json()
 }
 
 export default async function UsersPage() {
@@ -31,7 +29,7 @@ export default async function UsersPage() {
 
                         // agar tidak ERROR diberi key={} dibuat secara unique
                         // ${item} agar menunjuk pada item di ARRAY sesuai namanya
-                        <Link href={`/users/${item}`} key={item.id}>{item.name}</Link>
+                        <Link href={`/users/${item.name}`} key={item.id}>{item.name}</Link>
                     )
                 })
             }
