@@ -32,7 +32,7 @@ export default async function UsersPage() {
 
                         // agar tidak ERROR diberi key={} dibuat secara unique
                         // ${item} agar menunjuk pada item di ARRAY sesuai namanya
-                        <Link href={`/users/${item.name}`} key={item.id}>{item.name}</Link>
+                        <Link href={`/users/${item.id}`} key={item.id}>{item.name}</Link>
                     )
                 })
             }
