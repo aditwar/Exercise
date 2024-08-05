@@ -7,8 +7,8 @@ async function getData() {
 
     // Ini alamat dari JSON SERVER
     const res = await fetch("http://localhost:2000/user", {
-        // ini biar data yg ditampilkan OTO terbaruhi CACHING, selama 60 detik
-        next: { revalidate: 60 }
+        // ini biar data yg ditampilkan OTO terbaruhi CACHING, jika diubah oleh user (User on Demand)
+        next: { tags: ["users"] }
     })
 
     // ini untuk menangkap ERROR
