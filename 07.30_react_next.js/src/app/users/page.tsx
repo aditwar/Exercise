@@ -1,6 +1,9 @@
 // ini karena didalam folder users maka dapat diakses (ROUTER) dalam folder dengan alamat "/users"
 import Link from "next/link";
 
+// FUNCTION untuk FETCHING DATA dri SERVER
+
+
 export default function UsersPage() {
 
     // data ini tidak perlu pakai type nya (data: string[]) krn secara default sudah ada
