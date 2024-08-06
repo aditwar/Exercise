@@ -1,6 +1,15 @@
 // ini karena didalam folder users maka dapat diakses (ROUTER) dalam folder dengan alamat "/users"
 import Link from "next/link";
 import { IUser } from "../type";
+import { Metadata } from "next";
+
+// ini untuk export metadata yg ditampilkan di TITLE TAB BROWSER
+export const metadata: Metadata = {
+
+    // susunan nya sesuai di title ini
+    title: "My App | users",
+    description: "list all users"
+}
 
 // FUNCTION untuk FETCHING (GET) DATA dri SERVER menggunakan async
 async function getData() {
